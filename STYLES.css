@@ -76,6 +76,9 @@ footer{
     color: white;
     font-size: 1rem;
 }
+footer p{
+    padding: 1em;
+}
 footer p:first-child{
     margin: 1em 0 5em 0;
 }
