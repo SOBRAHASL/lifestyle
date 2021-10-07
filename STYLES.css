@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+body, header h1, header h2, section, section div, footer{
+    width: 100%;
+    margin: auto;
+    padding: 0;
+    font-family: "Segoe UI", roboto, Arial, sans-serif;
+    color: #232323;
+    text-align: center;
+}
+header h1, header h2, section div, section div img, section div p, footer{
+    box-sizing: border-box;
+}
+header h1, section div, footer{
+    box-shadow: 0 0 5px #232323;
+}
+b{
+    font-family: pacifico, cursive;
+    font-weight: lighter;
+    font-size: 1.5rem;
+}
+header h1{
+    padding: 0.5em !important;
+    color: white;
+    background-color: #232323;
+    font-size: 1.5em;
+    font-weight: 300;
+    border-radius: 0 0 1em 1em;
+    position: fixed;
+    top: 0;
+    transform: translateY(-100%);
+    animation: transform 15s 2.5s forwards ease;
+}
+header h2{
+    padding: 0.5em !important;
+    font-size: 5em;
+}
+header h2 span:nth-child(2){
+    color: #407BFF;
+    font-family: pacifico, cursive;
+}
+section{
+    width: 90%;
+}
+section div{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 2em 0;
+    border-radius: 1em;
+    padding: 1em;
+}
+section div img{
+    flex: 1 1 45%;
+    min-width: 280px;
+    max-width: 560px;
+}
+section div p{
+    flex: 1 1 45%;
+    line-height: 1.5em;
+    font-size: 1.2rem;
+    padding: 1em;
+}
+section div:nth-child(even) p span{
+    color: #407BFF;
+    font-weight: bold;
+}
+section div:nth-child(odd) p span{
+    color: #FFC100;
+    font-weight: bold;
+}
+footer{
+    border-radius: 1em 1em 0 0 ;
+    padding: 1em !important;
+    background-color: #232323;
+    color: white;
+    font-size: 1rem;
+}
+footer p:first-child{
+    margin: 1em 0 5em 0;
+}
+footer span{
+    font-family: pacifico, cursive;
+    font-size: 1.5rem;
+}
+footer span:nth-child(1){
+    color: #FFC100;
+}
+footer span:nth-child(3){
+    color: #407BFF;
+}
+@keyframes transform {
+    0%, 100%{
+        transform: translateY(-100%);
+        box-shadow: 0 0 0 #232323;
+    }
+    25%, 75%{
+        transform: translateY(0);
+        box-shadow: 0 0 5px #232323;
+    }
+}
+@media all and (min-width: 600px) {
+    section div:nth-child(even) p{
+        order: -1;
+    }
+}
