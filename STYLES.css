@@ -1,17 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-body, header h1, header h2, section, section div, footer{
+body, header h1, header h2, article, article section, footer, nav{
     width: 100%;
     margin: auto;
     padding: 0;
-    font-family: "Segoe UI", roboto, Arial, sans-serif;
+    font-family: "Segoe UI", roboto, sans-serif;
     color: #232323;
     text-align: center;
+    font-size: 1rem;
 }
-header h1, header h2, section div, section div img, section div p, footer{
+a{
+    text-decoration: none;
+}
+header h1, header h2, article section, section div img, section div p, footer, nav ul li, article form{
     box-sizing: border-box;
 }
-header h1, section div, footer{
-    box-shadow: 0 0 5px #232323;
+header h1, article section, footer, nav{
+    box-shadow: 0 0 4px #232323;
 }
 b{
     font-family: pacifico, cursive;
@@ -38,43 +42,106 @@ header h2 span:nth-child(2){
     color: #407BFF;
     font-family: pacifico, cursive;
 }
-section{
+nav{
+    background-color: #232323;
+    border-radius: 1em;
+    margin: 2em auto;
+}
+nav ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: column wrap;
+}
+nav ul li{
+    flex: 1 1 calc(100% / 7);
+    padding: 1em;
+    border-bottom: 1.5px solid #2c2c2c;
+}
+nav ul li:last-child{
+    border: none !important;
+}
+nav ul li a{
+    text-align: center;
+}
+nav li:nth-child(odd) a{
+    color: #FFC100;
+}
+nav li:nth-child(even) a{
+    color: #407BFF;
+}
+article, nav{
     width: 90%;
 }
-section div{
+article section{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    margin: 2em 0;
+    margin: 2em auto;
     border-radius: 1em;
     padding: 1em;
 }
-section div img{
+article section img{
     flex: 1 1 45%;
     min-width: 280px;
     max-width: 560px;
 }
-section div p{
+article section p{
     flex: 1 1 45%;
     line-height: 1.5em;
     font-size: 1.2rem;
     padding: 1em;
 }
-section div:nth-child(even) p span{
+article section:nth-child(even) p span, article section:nth-child(even) p span a{
     color: #407BFF;
     font-weight: bold;
 }
-section div:nth-child(odd) p span{
+article section:nth-child(odd) p span, article section:nth-child(odd) p span a{
     color: #FFC100;
     font-weight: bold;
+}
+article form{
+    box-shadow: 0 0 4px #232323;
+    border-radius: 1em;
+    padding: 1em;
+    margin: 2em auto;
+}
+article form *{
+    border-radius: 1rem;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0.5em auto;
+}
+article form legend, article form input[type="submit"]{
+    outline: none;
+    background-color: #232323;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1rem;
+    padding: 1em 0;
+    border-radius: 1rem;
+}
+article form input, form textarea{
+    border-radius: 0.75em;
+    padding: 0.75em;
+    font-size: 1rem;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 0 2px #232323;
+}
+article form textarea{
+    resize: vertical;
+}
+article form input:focus, article form textarea:focus{
+    outline: none;
 }
 footer{
     border-radius: 1em 1em 0 0 ;
     padding: 1em !important;
     background-color: #232323;
     color: white;
-    font-size: 1rem;
 }
 footer p{
     padding: 1em;
@@ -92,6 +159,10 @@ footer span:nth-child(1){
 footer span:nth-child(3){
     color: #407BFF;
 }
+footer p a{
+    color: #407BFF;
+    font-family: pacifico, cursive;
+}
 @keyframes transform {
     0%, 100%{
         transform: translateY(-100%);
@@ -99,11 +170,28 @@ footer span:nth-child(3){
     }
     25%, 75%{
         transform: translateY(0);
-        box-shadow: 0 0 5px #232323;
+        box-shadow: 0 0 4px #232323;
     }
 }
-@media all and (min-width: 600px) {
+@media all and (min-width: 600px){
     section div:nth-child(even) p{
         order: -1;
+    }
+    nav ul{
+        flex-flow: row wrap;
+    }
+    nav ul li{
+        border: none !important;
+    }
+}
+@media all and (min-width: 750px){
+    article form div.container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    article form div.content{
+        flex: 1 1 50%;
+        margin: 0.5em;
     }
 }
